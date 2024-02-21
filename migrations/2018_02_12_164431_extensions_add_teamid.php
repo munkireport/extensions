@@ -11,6 +11,7 @@ class ExtensionsAddTeamid extends Migration
     {
         $capsule = new Capsule();
         $capsule::schema()->table($this->tableName, function (Blueprint $table) {
+            $table->string('developer')->after('path')->nullable();
             $table->string('teamid')->after('developer')->nullable();
             $table->index('teamid');
         });
