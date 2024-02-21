@@ -15,6 +15,7 @@ class Extensions_model extends \Model {
         $this->rs['path'] = '';
         $this->rs['developer'] = '';
         $this->rs['teamid'] = '';
+        $this->rs['codesign'] = '';
         $this->rs['executable'] = '';
         $this->rs['boot_uuid'] = null;
         $this->rs['developer_mode'] = null; // Boolean
@@ -34,7 +35,6 @@ class Extensions_model extends \Model {
      **/
     function process($plist)
     {
-
         if ( ! $plist){
             throw new Exception("Error Processing Request: No property list found", 1);
         }
@@ -62,7 +62,12 @@ class Extensions_model extends \Model {
             foreach ($this->rs as $key => $value) {
                 // If key does not exist in $kext, null it
                 if ( ! array_key_exists($key, $kext) || $kext[$key] == '' && $kext[$key] != '0') {
-                    $this->rs[$key] = null;
+                    // Only some of the keys get nulled
+                    if ($key == 'boot_uuid' || $key == 'developer_mode' || $key == 'extension_policies' || $key == 'state' || $key == 'categories'){
+                        $this->rs[$key] = null;
+                    } else {
+                        $this->rs[$key] = "";
+                    }
                 } else {
                     $this->rs[$key] = $kext[$key];
                 }
