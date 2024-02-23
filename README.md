@@ -5,6 +5,7 @@ Provides information about third party extensions (kexts) and system extensions 
 
 Table Schema
 -----
+* name - varchar(255) - Name of the extension
 * bundle_id - varchar(255) - Bundle ID of the extension
 * version - varchar(255) - Version of the extension
 * path - text - Directory of extension

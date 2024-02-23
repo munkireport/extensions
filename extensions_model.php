@@ -15,7 +15,7 @@ class Extensions_model extends \Model {
         $this->rs['path'] = '';
         $this->rs['developer'] = '';
         $this->rs['teamid'] = '';
-        $this->rs['codesign'] = '';
+        // $this->rs['codesign'] = ''; // This column is deprecated and not used
         $this->rs['executable'] = '';
         $this->rs['boot_uuid'] = null;
         $this->rs['developer_mode'] = null; // Boolean
