@@ -9,22 +9,28 @@ buttons:
     i18n_label: extensions.blocked
     class: btn-danger
     hide_when_zero: true
+    search_component: blocked
   - label: activated_disabled
     i18n_label: extensions.activated_disabled
     class: btn-danger
     hide_when_zero: true
+    search_component: activated_disabled
   - label: activated_waiting_for_user
     i18n_label: extensions.activated_waiting_for_user
     class: btn-warning
     hide_when_zero: true
+    search_component: activated_waiting_for_user
   - label: waiting_for_approval
     i18n_label: extensions.waiting_for_approval
     class: btn-warning
     hide_when_zero: true
+    search_component: waiting_for_approval
   - label: activated_enabled
     i18n_label: extensions.activated_enabled
     class: btn-success
+    search_component: activated_enabled
   - label: terminated_waiting_to_uninstall_on_reboot
     i18n_label: extensions.terminated_waiting_to_uninstall_on_reboot
     class: btn-info
     hide_when_zero: true
+    search_component: terminated_waiting_to_uninstall_on_reboot
