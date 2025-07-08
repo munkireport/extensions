@@ -93,7 +93,9 @@ class Extensions_controller extends Module_controller
 
         $sql = "SELECT `name`, `bundle_id`, `version`, `path`, `developer`, `teamid`, `executable`, `boot_uuid`, `developer_mode`, `extension_policies`, `state`, `categories`
                 FROM `extensions`
-                WHERE `serial_number` = '$serial_number'";
+                LEFT JOIN reportdata USING (serial_number)
+                ".get_machine_group_filter()."
+                AND `serial_number` = '$serial_number'";
 
         $queryobj = new Extensions_model();
         $extensions_tab = $queryobj->query($sql);
