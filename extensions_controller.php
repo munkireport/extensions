@@ -32,7 +32,7 @@ class Extensions_controller extends Module_controller
     public function get_scroll_widget($column)
     {
         // Remove non-column name characters
-        $column = preg_replace("/[^A-Za-z0-9_\-]]/", '', $column);
+        $column = preg_replace("/[^A-Za-z0-9_\-]/", '', $column);
 
         $sql = "SELECT COUNT(CASE WHEN ".$column." <> '' AND ".$column." IS NOT NULL THEN 1 END) AS count, ".$column." 
                 FROM extensions
@@ -54,7 +54,7 @@ class Extensions_controller extends Module_controller
     public function get_button_widget($column)
     {
          // Remove non-column name characters
-        $column = preg_replace("/[^A-Za-z0-9_\-]]/", '', $column);
+        $column = preg_replace("/[^A-Za-z0-9_\-]/", '', $column);
 
         $sql = "SELECT COUNT(CASE WHEN ".$column." = 'activated_enabled' THEN 1 END) AS 'activated_enabled',
                     COUNT(CASE WHEN ".$column." = 'activated_disabled' THEN 1 END) AS 'activated_disabled',
@@ -89,7 +89,7 @@ class Extensions_controller extends Module_controller
         }
 
         // Remove non-serial number characters
-        $serial_number = preg_replace("/[^A-Za-z0-9_\-]]/", '', $serial_number);
+        $serial_number = preg_replace("/[^A-Za-z0-9_\-]/", '', $serial_number);
 
         $sql = "SELECT `name`, `bundle_id`, `version`, `path`, `developer`, `teamid`, `executable`, `boot_uuid`, `developer_mode`, `extension_policies`, `state`, `categories`
                 FROM `extensions`

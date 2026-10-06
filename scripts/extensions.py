@@ -13,7 +13,6 @@ import json
 import subprocess
 from subprocess import Popen, PIPE
 
-sys.path.insert(0, '/usr/local/munki')
 sys.path.insert(0, '/usr/local/munkireport')
 
 from munkilib import FoundationPlist
